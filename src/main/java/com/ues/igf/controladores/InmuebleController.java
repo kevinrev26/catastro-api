@@ -33,7 +33,7 @@ public class InmuebleController {
         return inmuebleRepositorio.findAll();
     }
     
-    @RequestMapping(value="/inmuebles", method=RequestMethod.POST)
+    @RequestMapping(value="/inmuebles", consumes="application/json", method=RequestMethod.POST)
     public @ResponseBody Inmueble savecontribuyentes(@RequestBody Inmueble inmueble){
         return inmuebleRepositorio.save(inmueble);
     }
@@ -43,7 +43,7 @@ public class InmuebleController {
         return inmuebleRepositorio.findOne(id);
     }
     
-    @RequestMapping(value="/inmuebles/{id}", method=RequestMethod.PUT)
+    @RequestMapping(value="/inmuebles/{id}", consumes="application/json", method=RequestMethod.PUT)
     public @ResponseBody Inmueble updateInmueble(@RequestBody Inmueble inmueble, @PathVariable String id){
         return inmuebleRepositorio.save(inmueble);
     }
