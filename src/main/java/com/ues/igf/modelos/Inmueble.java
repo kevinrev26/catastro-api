@@ -5,6 +5,7 @@
  */
 package com.ues.igf.modelos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -80,9 +81,11 @@ public class Inmueble implements Serializable {
     @Size(max = 250)
     @Column(name = "observaciones")
     private String observaciones;
+    @JsonIgnore
     @JoinColumn(name = "id_contribuyente", referencedColumnName = "id_contribuyente")
     @ManyToOne
     private Contribuyente idContribuyente;
+    @JsonIgnore
     @JoinColumn(name = "identificador_impuesto", referencedColumnName = "identificador_impuesto")
     @ManyToOne
     private Impuesto identificadorImpuesto;

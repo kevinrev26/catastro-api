@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -33,17 +34,17 @@ public class InmuebleController {
     }
     
     @RequestMapping(value="/inmuebles", method=RequestMethod.POST)
-    public Inmueble savecontribuyentes(@RequestBody Inmueble inmueble){
+    public @ResponseBody Inmueble savecontribuyentes(@RequestBody Inmueble inmueble){
         return inmuebleRepositorio.save(inmueble);
     }
     
     @RequestMapping(value="/inmuebles/{id}", method=RequestMethod.GET)
-    public Inmueble getInmueble(@PathVariable String id){
+    public @ResponseBody Inmueble getInmueble(@PathVariable String id){
         return inmuebleRepositorio.findOne(id);
     }
     
     @RequestMapping(value="/inmuebles/{id}", method=RequestMethod.PUT)
-    public Inmueble updateInmueble(@RequestBody Inmueble inmueble, @PathVariable String id){
+    public @ResponseBody Inmueble updateInmueble(@RequestBody Inmueble inmueble, @PathVariable String id){
         return inmuebleRepositorio.save(inmueble);
     }
     

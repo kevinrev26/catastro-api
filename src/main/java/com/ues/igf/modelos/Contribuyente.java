@@ -5,6 +5,7 @@
  */
 package com.ues.igf.modelos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -69,6 +70,7 @@ public class Contribuyente implements Serializable {
     @Size(max = 250)
     @Column(name = "email")
     private String email;
+    @JsonIgnore
     @OneToMany(mappedBy = "idContribuyente")
     private List<Inmueble> inmuebleList;
 

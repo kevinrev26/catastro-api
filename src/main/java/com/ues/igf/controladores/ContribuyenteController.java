@@ -33,13 +33,13 @@ public class ContribuyenteController {
         return contribuyenteRepositorio.findAll();
     }
     
-    @RequestMapping(value="/contribuyentes", method=RequestMethod.POST)
-    public Contribuyente saveContribuyente(@RequestBody Contribuyente contribuyente){
+    @RequestMapping(value="/contribuyentes", consumes="application/json", method=RequestMethod.POST)
+    public @ResponseBody Contribuyente saveContribuyente(@RequestBody Contribuyente contribuyente){
         return contribuyenteRepositorio.save(contribuyente);
     }
     
     @RequestMapping(value="/contribuyentes/{contribId}", method=RequestMethod.GET)
-    public Contribuyente contribuyentePorId(@PathVariable Integer contribId){
+    public @ResponseBody Contribuyente contribuyentePorId(@PathVariable Integer contribId){
         return contribuyenteRepositorio.findOne(contribId);
     }
     
