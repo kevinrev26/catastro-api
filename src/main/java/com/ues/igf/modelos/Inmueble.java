@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "inmueble")
-@XmlRootElement
+//@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Inmueble.findAll", query = "SELECT i FROM Inmueble i"),
     @NamedQuery(name = "Inmueble.findByClaveCatastral", query = "SELECT i FROM Inmueble i WHERE i.claveCatastral = :claveCatastral"),

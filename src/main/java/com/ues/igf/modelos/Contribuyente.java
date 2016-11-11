@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "contribuyente")
-@XmlRootElement
+//@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Contribuyente.findAll", query = "SELECT c FROM Contribuyente c"),
     @NamedQuery(name = "Contribuyente.findByIdContribuyente", query = "SELECT c FROM Contribuyente c WHERE c.idContribuyente = :idContribuyente"),
@@ -135,7 +135,7 @@ public class Contribuyente implements Serializable {
         this.email = email;
     }
 
-    @XmlTransient
+    //@XmlTransient
     public List<Inmueble> getInmuebleList() {
         return inmuebleList;
     }
